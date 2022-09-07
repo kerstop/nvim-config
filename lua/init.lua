@@ -24,6 +24,17 @@ vim.g.coq_settings = {
         recommended = false,
         manual_complete = "<C-w>",
     },
+    limits = {
+        completion_auto_timeout = 1.5,
+    },
+    clients = {
+        snippets = {
+            enabled = false,
+        },
+        lsp = {
+            resolve_timeout = 1.5,
+        },
+    },
 }
 
 require("nvim-tree").setup()
