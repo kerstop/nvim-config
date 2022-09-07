@@ -5,7 +5,7 @@ require('lspconfig').rust_analyzer.setup{
     on_attach = require("mappings").on_attach,
 }
 
-require('lspconfig').jedi_language_server.setup({})
+require('lspconfig').pylsp.setup({})
 
 require('ayu').setup({
     mirage = true,
