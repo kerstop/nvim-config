@@ -7,6 +7,8 @@ require('lspconfig').rust_analyzer.setup{
 
 require('lspconfig').pylsp.setup({})
 
+require('lspconfig').clangd.setup({})
+
 require('ayu').setup({
     mirage = true,
 })
