@@ -35,4 +35,7 @@ return require('packer').startup(function(use)
     -- auto save
     use 'Pocco81/auto-save.nvim'
 
+    -- git integration
+    use 'tpope/vim-fugitive'
+
 end)
