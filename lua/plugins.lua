@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
     -- use 'powerline/powerline'
 
     -- auto close braces and stuff
-    use 'Raimondi/delimitMate'
+    use 'jiangmiao/auto-pairs'
 
     -- provides auto completion
     use 'ms-jpq/coq_nvim'
