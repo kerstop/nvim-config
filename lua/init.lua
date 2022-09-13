@@ -47,9 +47,4 @@ require("auto-save").setup({
     }
 })
 
-require("symbols-outline").setup({
-    auto_close = true,
-    keymaps = {
-        hover_symbol = "<C-w>",
-    }
-})
+require("symbols-outline").setup({})
