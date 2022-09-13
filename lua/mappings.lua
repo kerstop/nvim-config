@@ -8,7 +8,7 @@ end
 
 map("n", "<Leader>p", ":NvimTreeOpen<CR>", {silent = true})
 map("n", "<Leader>t", ":terminal<CR>")
-map("n", "<Leader>o", ":SymbolsOutline<CR>W", {silent = true})
+map("n", "<Leader>o", ":SymbolsOutlineOpen<CR>W", {silent = true})
 
 
 -- keymaps for LSP 
