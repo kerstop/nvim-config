@@ -10,6 +10,12 @@ map("n", "<Leader>p", ":NvimTreeOpen<CR>", {silent = true})
 map("n", "<Leader>t", ":terminal<CR>")
 map("n", "<Leader>o", ":SymbolsOutline<CR>", {silent = true})
 
+-- for switching panes
+map("n", "<A-h>", ":wincmd h<CR>", {silent = true})
+map("n", "<A-j>", ":wincmd j<CR>", {silent = true})
+map("n", "<A-k>", ":wincmd k<CR>", {silent = true})
+map("n", "<A-l>", ":wincmd l<CR>", {silent = true})
+
 
 -- keymaps for LSP 
 
