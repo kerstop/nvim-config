@@ -7,7 +7,9 @@ require('lspconfig').rust_analyzer.setup{
 
 require('lspconfig').pylsp.setup({})
 
-require('lspconfig').clangd.setup({})
+require('lspconfig').clangd.setup({
+    on_attach = require("mappings").on_attach,
+})
 
 require('ayu').setup({
     mirage = true,
