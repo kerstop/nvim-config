@@ -26,7 +26,7 @@ vim.g.coq_settings = {
     auto_start = 'shut-up',
     keymap = { 
         recommended = false,
-        manual_complete = "<C-w>",
+        manual_complete = "<c-l>",
     },
     limits = {
         completion_auto_timeout = 1.5,
