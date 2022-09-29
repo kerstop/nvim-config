@@ -15,10 +15,16 @@ map("n", "<A-h>", ":wincmd h<CR>", {silent = true})
 map("n", "<A-j>", ":wincmd j<CR>", {silent = true})
 map("n", "<A-k>", ":wincmd k<CR>", {silent = true})
 map("n", "<A-l>", ":wincmd l<CR>", {silent = true})
+map("t", "<A-h>", "<C-\\><C-n>:wincmd h<CR>", {silent = true})
+map("t", "<A-j>", "<C-\\><C-n>:wincmd j<CR>", {silent = true})
+map("t", "<A-k>", "<C-\\><C-n>:wincmd k<CR>", {silent = true})
+map("t", "<A-l>", "<C-\\><C-n>:wincmd l<CR>", {silent = true})
 
+
+-- for exiting terminal mode with esc
+map("t", "<Esc>", "<C-\\><C-n>", {noremap = true})
 
 -- keymaps for LSP 
-
 vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, {silent=true})
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {silent=true})
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {silent=true})
