@@ -7,7 +7,7 @@ function map(mode, lhs, rhs, opts)
 end
 
 map("n", "<Leader>p", ":NvimTreeOpen<CR>", {silent = true})
-map("n", "<Leader>t", ":terminal<CR>")
+map("n", "<Leader>t", ":bel 13split<CR>:terminal<CR>")
 map("n", "<Leader>o", ":SymbolsOutline<CR>", {silent = true})
 
 -- for switching panes
