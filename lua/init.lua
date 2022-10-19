@@ -1,7 +1,7 @@
 
 -- command to initialize rust analyzer
 require('lspconfig').rust_analyzer.setup{
-    cmd = {"rustup", "run", "nightly", "rust-analyzer"},
+    cmd = {"rustup", "run", "stable", "rust-analyzer"},
     on_attach = require("mappings").on_attach,
 }
 

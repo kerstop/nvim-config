@@ -21,6 +21,6 @@ set expandtab
 ino <silent><expr> <C-s> pumvisible() ? "\<C-e>" : "\<C-s>"
 ino <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
 ino <silent><expr> <Tab>   pumvisible() ? (complete_info().selected == -1 ? "\<C-n><C-y>" : "\<C-y>") : "\<Tab>"
-ino <silent><expr> <CR>   pumvisible() ? "\<C-e><CR>" : "\<CR>"
+ino <silent><expr> <CR>   pumvisible() ? "\<C-y>" : "\<CR>"
 
 
