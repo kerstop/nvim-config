@@ -56,3 +56,8 @@ require("auto-save").setup({
 })
 
 require("symbols-outline").setup({})
+
+-- diagnostics config
+vim.diagnostic.config({
+    virtual_text = { format = function(d) return "" end },
+})
