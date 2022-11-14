@@ -5,6 +5,8 @@ require('lspconfig').rust_analyzer.setup{
     on_attach = require("mappings").on_attach,
 }
 
+require('lspconfig').tsserver.setup({})
+
 require('lspconfig').pylsp.setup({})
 
 require('lspconfig').clangd.setup({
