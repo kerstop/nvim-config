@@ -5,9 +5,13 @@ require('lspconfig').rust_analyzer.setup{
     on_attach = require("mappings").on_attach,
 }
 
-require('lspconfig').tsserver.setup({})
+require('lspconfig').tsserver.setup({
+    on_attach = require("mappings").on_attach,
+})
 
-require('lspconfig').pylsp.setup({})
+require('lspconfig').pylsp.setup({
+    on_attach = require("mappings").on_attach,
+})
 
 require('lspconfig').clangd.setup({
     on_attach = require("mappings").on_attach,
@@ -46,8 +50,11 @@ vim.g.coq_settings = {
 require("nvim-tree").setup({
     actions = {
         open_file = {
-            resize_window = false
+            resize_window = false,
         }
+    },
+    git = {
+        ignore = false,
     }
 })
 
