@@ -27,6 +27,15 @@ require('lualine').setup({
     }
 })
 
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true,
+    },
+    autotag = {
+        enable = true,
+    }
+}
+
 -- auto starts the auto complete
 vim.g.coq_settings = { 
     auto_start = 'shut-up',

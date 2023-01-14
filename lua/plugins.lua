@@ -38,4 +38,8 @@ return require('packer').startup(function(use)
     -- git integration
     use 'tpope/vim-fugitive'
 
+    -- auto close html tags
+    use 'windwp/nvim-ts-autotag'
+    use 'nvim-treesitter/nvim-treesitter'
+
 end)
