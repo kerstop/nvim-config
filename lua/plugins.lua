@@ -42,4 +42,7 @@ return require('packer').startup(function(use)
     use 'windwp/nvim-ts-autotag'
     use 'nvim-treesitter/nvim-treesitter'
 
+    -- formating for javascript
+    use 'sbdchd/neoformat'
+
 end)

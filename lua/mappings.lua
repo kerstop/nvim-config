@@ -20,6 +20,13 @@ map("t", "<A-j>", "<C-\\><C-n>:wincmd j<CR>", {silent = true})
 map("t", "<A-k>", "<C-\\><C-n>:wincmd k<CR>", {silent = true})
 map("t", "<A-l>", "<C-\\><C-n>:wincmd l<CR>", {silent = true})
 
+--suggestion window navigation
+vim.keymap.set('i', '<Esc>', function() 
+    return vim.fn.pumvisible() == 1 and "<C-e><Esc>" or "<Esc>"
+end, { expr = true })
+vim.keymap.set('i', '<Tab>', function()
+  return vim.fn.pumvisible() == 1 and "<C-y>" or "<Tab>"
+end, { expr = true })
 
 -- for exiting terminal mode with esc
 map("t", "<Esc>", "<C-\\><C-n>", {noremap = true})
@@ -52,7 +59,14 @@ end, bufopts)
     vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<Leader>f', vim.lsp.buf.formatting, bufopts)
+
+    -- if the buffer is js use prettier
+    if client.name == "tsserver" then 
+        vim.keymap.set('n', '<Leader>f', ":Neoformat prettier<Enter>", bufopts)
+    else
+        vim.keymap.set('n', '<Leader>f', function()
+            vim.lsp.buf.format({ async = true }) end, bufopts)
+    end
 end
 
 return {on_attach = on_attach}
