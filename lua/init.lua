@@ -32,6 +32,7 @@ require('lualine').setup({
 })
 
 require'nvim-treesitter.configs'.setup {
+    ensure_installled = {"rust", "lua", "vim", "javascript", "typescript", "tsx", "toml"},
     highlight = {
         enable = true,
     },
