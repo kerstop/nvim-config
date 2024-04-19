@@ -44,28 +44,24 @@ local on_attach = function(client, bufnr)
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-    vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-    vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-    vim.keymap.set('n', '<Leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end, bufopts)
-    vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
-    vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '', { noremap=true, silent=true, callback=vim.lsp.buf.declaration})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '', { noremap=true, silent=true, callback=vim.lsp.buf.definition})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '', { noremap=true, silent=true, callback=vim.lsp.buf.hover})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '', { noremap=true, silent=true, callback=vim.lsp.buf.implementation})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '', { noremap=true, silent=true, callback=vim.lsp.buf.signature_help})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wa', '', { noremap=true, silent=true, callback=vim.lsp.buf.add_workspace_folder})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>wr', '', { noremap=true, silent=true, callback=vim.lsp.buf.remove_workspace_folder})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>D', '', { noremap=true, silent=true, callback=vim.lsp.buf.type_definition})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>rn', '', { noremap=true, silent=true, callback=vim.lsp.buf.rename})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>ca', '', { noremap=true, silent=true, callback=vim.lsp.buf.code_action})
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '', { noremap=true, silent=true, callback=vim.lsp.buf.references})
 
     -- if the buffer is js use prettier
     if client.name == "tsserver" then 
-        vim.keymap.set('n', '<Leader>f', ":Neoformat prettier<Enter>", bufopts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>f', ":Neoformat prettier<Enter>", {noremap=true, silent=true})
     else
-        vim.keymap.set('n', '<Leader>f', function()
-            vim.lsp.buf.format({ async = true }) end, bufopts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Leader>f', function()
+            vim.lsp.buf.format({ async = true }) end, {noremap=true, silent=true})
     end
 end
 
